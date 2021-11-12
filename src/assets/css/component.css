@@ -1,8 +1,68 @@
 /* title */
 .title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 32px;
-  letter-spacing: -0.01em;
-  color: var(--primary-color);
+  @apply text-primaryColor font-bold text-20;
+}
+
+.top-navigation-wrapper {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  padding: 10px 15px;
+  z-index: 9999;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+  background: var(--white);
+  /* overflow-x: hidden; */
+}
+
+/* top-navigation */
+.top-navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-img img {
+  width: 90px;
+}
+
+/* profile-sidebar-toggle */
+.profile-sidebar-toggle i,
+.top-user i {
+  font-size: 24px;
+  color: var(--blue);
+  cursor: pointer;
+}
+.profile-sidebar-toggle {
+  position: relative;
+}
+.top-user {
+  margin-left: 25px;
+}
+
+.profile-sidebar-toggle > span.badge {
+  position: absolute;
+  top: -4px;
+  right: -15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--neon);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* sidebar-toggle */
+.top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

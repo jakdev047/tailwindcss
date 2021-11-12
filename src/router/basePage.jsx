@@ -1,7 +1,8 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 // layout
+import TopNavigation from './../layout/topNavigation/TopNavigation';
 
 
 // module
@@ -13,6 +14,9 @@ const BasePage = () => {
       <div className="main">
          <BrowserRouter>
             {/* topNavigation */}
+            <div className="top-navigation-wrapper">
+               <TopNavigation />
+            </div>
 
 
             {/* sidebar section */}
