@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 // layout
 import TopNavigation from './../layout/topNavigation/TopNavigation';
+import FooterSection from "../layout/footer/FooterSection";
 
 
 // module
@@ -11,7 +12,7 @@ const Dashboard = lazy(() => import("../modules/dashboard/index"));
 const BasePage = () => {
 
    return (
-      <div className="main">
+      <div className="main mobile:relative h-screen mobile:auto tablet:h-auto desktop:h-auto">
          <BrowserRouter>
             {/* topNavigation */}
             <div className="top-navigation-wrapper">
@@ -40,7 +41,9 @@ const BasePage = () => {
             </div>
 
             {/* footer */}
-            <div className="footer"></div>
+            <div className="footer">
+               <FooterSection />
+            </div>
          </BrowserRouter>
       </div>
    );

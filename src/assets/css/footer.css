@@ -1,0 +1,10 @@
+/* footer-div */
+.footer-div {
+    height: 72px;
+    @apply block mobile:hidden absolute bg-white bottom-0 left-0 w-full;
+}
+
+.footer-div ul {
+  padding: 0 24px;
+  @apply flex items-center justify-between h-full;
+}

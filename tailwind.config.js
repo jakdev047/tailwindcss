@@ -49,6 +49,9 @@ module.exports = {
         extraBold: "800",
         black: "900",
       },
+      height: {
+        h72: "72px"
+      }
     },
     screens: {
       mobile: "400px",
