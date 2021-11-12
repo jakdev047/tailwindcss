@@ -1,3 +1,9 @@
+.top-navigation-wrapper {
+  padding: 0px 28px 0 36px;
+  height: 64px;
+  @apply sticky w-full top-0 bg-white;
+}
+
 .top-menu {
-    @apply flex items-center justify-items-center;
-  }
+  @apply flex items-center justify-items-center;
+}
