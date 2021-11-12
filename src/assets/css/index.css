@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom css */
+@import "./general.css";
+@import "./component.css";
+
+/* all module should be placed top of this */
+@import "./responsive.css";

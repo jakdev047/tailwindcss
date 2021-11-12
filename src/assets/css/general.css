@@ -1,0 +1,165 @@
+/*==================================
+* Author        : ""
+* Template Name :  React Dashboard
+* Version       : 1.0
+==================================== */
+
+/*=========== TABLE OF CONTENTS ===========
+
+==========================================*/
+
+/*==================================
+font-family: 'Inter', sans-serif;
+==================================== */
+
+/*-------------------------------------
+	Fonts
+--------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/*-------------------------------------
+	variable
+--------------------------------------*/
+:root {
+  --white: #fff !important;
+  --primary-color: #3e3f48 !important;
+  --secondary-color: #00c614 !important;
+  --body-color: #f2f2f3 !important;
+  --menu-color: #6b6c72 !important;
+  --placeholder-color: #88898e !important;
+  --warning: #fdf4ed !important;
+
+  --interFont: "Inter", sans-serif !important;
+}
+
+*,
+p,
+a,
+span,
+div,
+label {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: var(--interFont);
+}
+.table thead th {
+  vertical-align: middle;
+}
+body {
+  background: var(--body-color);
+  color: var(--primary-color);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+a,
+a:hover,
+a:active,
+a:focus {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+}
+a:hover,
+a:active,
+a:focus {
+  color: var(--primary-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a,
+h2 > a:hover,
+h3 > a:hover {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: var(--primary-color);
+}
+p {
+  margin: 0;
+}
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul li {
+  list-style: none;
+  display: inline-block;
+}
+select,
+input,
+textarea,
+button,
+.form-control,
+.form-control:focus,
+input:focus {
+  box-shadow: none;
+  outline: 0 !important;
+}
+button {
+  background: var(--black);
+  border: 1px solid var(--black);
+  font-size: 16px;
+  text-transform: capitalize;
+  line-height: 1.5;
+  color: var(--white);
+}
+[placeholder]:focus::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.3s 0.3s ease;
+  -moz-transition: opacity 0.3s 0.3s ease;
+  -ms-transition: opacity 0.3s 0.3s ease;
+  -o-transition: opacity 0.3s 0.3s ease;
+  transition: opacity 0.3s 0.3s ease;
+  opacity: 0;
+}
+[placeholder] {
+  color: var(--placeholder-color);
+}
+
+::selection {
+  background: var(--secondary-color);
+  color: var(--white);
+}
