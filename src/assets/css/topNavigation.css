@@ -5,5 +5,36 @@
 }
 
 .top-menu {
-  @apply flex items-center justify-items-center;
+  @apply flex items-center w-full;
+  justify-content: space-between;
+}
+
+/* .top-navigation-left  */
+.top-navigation {
+  display: flex;
+  align-items: center;
+}
+.top-navigation-left {
+  width: 205px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+.top-drop-menu span.txt {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.25px;
+  color: #3e3f48;
+  margin-right: 7px;
+}
+.top-drop-menu span.icon {
+  color: #88898E;
+}
+.profile-menu-img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 0 16px 0 19px;
 }
