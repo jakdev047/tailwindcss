@@ -7,6 +7,7 @@
 .top-menu {
   @apply flex items-center w-full;
   justify-content: space-between;
+  padding-left: 43px;
 }
 
 /* .top-navigation-left  */
@@ -29,7 +30,7 @@
   margin-right: 7px;
 }
 .top-drop-menu span.icon {
-  color: #88898E;
+  color: #88898e;
 }
 .profile-menu-img {
   display: inline-block;

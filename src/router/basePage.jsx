@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 // layout
 import TopNavigation from './../layout/topNavigation/TopNavigation';
 import FooterSection from "../layout/footer/FooterSection";
+import Sidebar from "../layout/sidebar/Sidebar";
 
 
 // module
@@ -19,12 +20,13 @@ const BasePage = () => {
                <TopNavigation />
             </div>
 
-
             {/* sidebar section */}
-
+            <div className="sidebar width-15">
+               <Sidebar />
+            </div>
 
             {/* body */}
-            <div>
+            <div className="body width-85">
                {/* body-inner */}
                <div className="body-inner">
                   <Suspense fallback={<div>Loading...</div>}>

@@ -6,6 +6,7 @@
 @import "./general.css";
 @import "./component.css";
 @import "./topNavigation.css";
+@import "./sidebar.css";
 @import "./footer.css";
 
 /* all module should be placed top of this */
