@@ -9,6 +9,7 @@ import Sidebar from "../layout/sidebar/Sidebar";
 
 // module
 const Dashboard = lazy(() => import("../modules/dashboard/index"));
+const Inventory = lazy(() => import("../modules/Inventory/index"));
 
 const BasePage = () => {
 
@@ -32,7 +33,7 @@ const BasePage = () => {
                   <Suspense fallback={<div>Loading...</div>}>
                      <Switch>
                         <Route exact path="/" component={Dashboard} />
-                        <Route exact path="/inventory" component={() => <h2>Inventory</h2>} />
+                        <Route exact path="/inventory" component={Inventory} />
                         <Route exact path="/documents" component={() => <h2>Documents</h2>} />
                         <Route exact path="/settings" component={() => <h2>Settings</h2>} />
                         <Route path="/error" component={() => <h1>Error 404!</h1>} />

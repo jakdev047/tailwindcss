@@ -191,7 +191,7 @@ button {
   height: 100%;
 }
 .app .main .body .body-inner {
-  padding: 16px 24px 115px;
+  padding: 0px 0px 115px;
   width: 100%;
   height: 100%;
   border-left: 1px solid #e5e5e6;
@@ -219,3 +219,15 @@ button {
   margin-left: 0px;
   width: 235px;
 }
+
+.bg-success {
+  background: #44c776;
+}
+.bg-warning {
+  background: #f58a28;
+}
+.bg-error {
+  background: #f52828;
+}
+
+/* checkbox */

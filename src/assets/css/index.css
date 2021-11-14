@@ -8,6 +8,8 @@
 @import "./topNavigation.css";
 @import "./sidebar.css";
 @import "./footer.css";
+@import "./table.css";
+@import "./scrollableTable.css";
 
 /* all module should be placed top of this */
 @import "./responsive.css";

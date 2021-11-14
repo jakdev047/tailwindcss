@@ -50,7 +50,8 @@ module.exports = {
         black: "900",
       },
       height: {
-        h72: "72px"
+        h72: "72px",
+        h40: "40px"
       }
     },
     screens: {
