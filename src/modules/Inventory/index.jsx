@@ -8,9 +8,10 @@ import {
 import FilterSearch from "../../common/FilterSearch";
 import ScrollableTable from "../../common/ScrollableTable";
 import FormikCheckbox from "../../common/FormikCheckbox";
-import { secondaryColor, grayColor } from "../../utility/color";
+import { grayColor } from "../../utility/color";
 import { todayDate } from "../../utility/todayDate";
 import { dateFormatter } from "../../utility/dateFormatter";
+import { inventoryData } from "../../utility/inventoryData";
 
 const initData = {
   searchInventory: "",
@@ -66,7 +67,7 @@ export default function Inventory() {
                       <ScrollableTable>
                         <thead className="bg-warning h-h40">
                           <tr>
-                            <th>
+                            <th style={{ padding: "0 0 0 5px", width: "64px" }}>
                               <FormikCheckbox
                                 styleObj={{
                                   padding: "0!important",
@@ -80,7 +81,7 @@ export default function Inventory() {
                                 }}
                               />
                             </th>
-                            <th>
+                            <th style={{ width: "120px" }}>
                               <div className="flex items-center">
                                 <span className="text-13 font-medium">
                                   Date Updated
@@ -90,7 +91,7 @@ export default function Inventory() {
                                 />
                               </div>
                             </th>
-                            <th>
+                            <th style={{ width: "120px" }}>
                               <div className="flex items-center">
                                 <span className="text-13 font-medium">
                                   Title
@@ -114,28 +115,30 @@ export default function Inventory() {
                               </div>
                             </th>
                             <th>
-                              <span className="text-13 font-medium">
+                              <div className="text-13 font-medium text-left">
                                 Details
-                              </span>
+                              </div>
                             </th>
-                            <th>
-                              <span className="text-13 font-medium">
+                            <th style={{ width: "160px" }}>
+                              <div className="text-13 font-medium text-left">
                                 Status
-                              </span>
+                              </div>
                             </th>
-                            <th>
-                              <span className="text-13 font-medium">
+                            <th style={{ width: "100px" }}>
+                              <div className="text-13 font-medium text-left">
                                 Quantity
-                              </span>
+                              </div>
                             </th>
-                            <th>
+                            <th style={{ width: "130px" }}>
                               <span className="text-13 font-medium">
                                 Unit Price
                               </span>
                             </th>
-                            <th>
+                            <th
+                              style={{ padding: "0 11px 0 0", width: "130px" }}
+                            >
                               <div className="text-right">
-                                <span className="text-13 font-medium flex items-center justify-end" >
+                                <span className="text-13 font-medium flex items-center justify-end">
                                   Amount
                                   <span className="flex flex-col">
                                     <ArrowUpwardOutlined
@@ -159,55 +162,78 @@ export default function Inventory() {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <div>
-                                <FormikCheckbox
-                                  styleObj={{
-                                    padding: "0!important",
-                                    margin: "0 auto!important",
-                                    color: secondaryColor,
-                                  }}
-                                  name="checkbox"
-                                  checked={values?.checkbox}
-                                  onChange={(e) => {
-                                    setFieldValue("checkbox", e.target.checked);
-                                  }}
-                                />
-                              </div>
-                            </td>
-                            <td>
-                              <div className="text-center">
-                                {dateFormatter(todayDate())}
-                              </div>
-                            </td>
-                            <td>
-                              <div className="text-center">Hammer</div>
-                            </td>
-                            <td>
-                              <div className="text-center">
-                                This is a hammer to do work with
-                              </div>
-                            </td>
-                            <td>
-                              <div className="text-center">
-                                <span>Alright</span>
-                                <span
-                                  className="circle-icon bg-success"
-                                  style={{ marginLeft: "8px" }}
-                                ></span>
-                              </div>
-                            </td>
-                            <td>
-                              <div className="text-center">200/300</div>
-                            </td>
-                            <td>
-                              <div className="text-center">$10</div>
-                            </td>
-                            <td>
-                              <div className="text-center">$2000.00</div>
-                            </td>
-                          </tr>
+                          {inventoryData?.length > 0 && (
+                            <>
+                              {inventoryData?.map((item, index) => {
+                                return (
+                                  <>
+                                    <tr className="h-h64">
+                                      <td style={{ padding: "0 0 0 5px" }}>
+                                        <div>
+                                          <FormikCheckbox
+                                            styleObj={{
+                                              padding: "0!important",
+                                              margin: "0 auto!important",
+                                              color: grayColor,
+                                            }}
+                                            name="checkbox"
+                                            checked={item?.isCheck}
+                                            onChange={(e) => {
+                                              setFieldValue(
+                                                "checkbox",
+                                                e.target.checked
+                                              );
+                                            }}
+                                          />
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div className="text-16">
+                                          {item?.dateUpdate}
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div className="text-16">
+                                          {item?.title}
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div className="text-16">
+                                          {item?.details}
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div className="text-16">
+                                          {item?.status === "Al Right" && (
+                                            <>
+                                              <span>Alright</span>
+                                              <span
+                                                className="circle-icon bg-success"
+                                                style={{ marginLeft: "8px" }}
+                                              ></span>
+                                            </>
+                                          )}
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div className="text-16">
+                                          <span className="font-bold">{item?.quantity}</span>/{item?.quantityTotal}
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div className="text-center">{item?.price}</div>
+                                      </td>
+                                      <td style={{ padding: "0 11px 0 0" }}>
+                                        <div className="text-right">
+                                          {item?.amount}
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </>
+                                );
+                              })}
+                            </>
+                          )}
                         </tbody>
                       </ScrollableTable>
                     </div>
