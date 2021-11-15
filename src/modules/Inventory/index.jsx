@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import {
   ArrowUpwardOutlined,
   ArrowDownwardOutlined,
+  ChevronLeft,
+  ChevronRight,
 } from "@mui/icons-material";
 import FilterSearch from "../../common/FilterSearch";
 import FormikCheckbox from "../../common/FormikCheckbox";
@@ -11,6 +13,8 @@ import { grayColor } from "../../utility/color";
 import { dateFormatter } from "../../utility/dateFormatter";
 import { inventoryData } from "../../utility/inventoryData";
 import LandingTable from "../../common/LandingTable";
+import FormikSelect from "../../common/FormikSelect";
+import { customStyles } from "../../utility/selectCustomStyle";
 
 const initData = {
   searchInventory: "",
@@ -66,7 +70,10 @@ export default function Inventory() {
                       <LandingTable>
                         <thead className="bg-warning h-h40">
                           <tr>
-                            <th className="w-w64" style={{paddingLeft: '5px'}}>
+                            <th
+                              className="w-w64"
+                              style={{ paddingLeft: "5px" }}
+                            >
                               <FormikCheckbox
                                 styleObj={{
                                   padding: "0!important",
@@ -168,7 +175,7 @@ export default function Inventory() {
                                 return (
                                   <>
                                     <tr className="h-h64" key={index}>
-                                      <td style={{paddingLeft: '5px'}}>
+                                      <td style={{ paddingLeft: "5px" }}>
                                         <div>
                                           <FormikCheckbox
                                             styleObj={{
@@ -199,7 +206,7 @@ export default function Inventory() {
                                       </td>
                                       <td>
                                         <div className="text-16">
-                                          {item?.details ? item?.details : '-'}
+                                          {item?.details ? item?.details : "-"}
                                         </div>
                                       </td>
                                       <td>
@@ -235,11 +242,16 @@ export default function Inventory() {
                                       </td>
                                       <td>
                                         <div className="text-16">
-                                          <span className="font-bold">{item?.quantity}</span>/{item?.quantityTotal}
+                                          <span className="font-bold">
+                                            {item?.quantity}
+                                          </span>
+                                          /{item?.quantityTotal}
                                         </div>
                                       </td>
                                       <td>
-                                        <div className="text-center">${item?.price}</div>
+                                        <div className="text-center">
+                                          ${item?.price}
+                                        </div>
                                       </td>
                                       <td style={{ padding: "0 10px 0 0" }}>
                                         <div className="text-right">
@@ -256,7 +268,37 @@ export default function Inventory() {
                       </LandingTable>
                     </div>
                     <div className="table-card-pagination">
-                      
+                      <div className="table-card-left">
+                        <div className="btn btn-pagination"></div>
+                      </div>
+                      <div className="table-card-right">
+                        <ul>
+                          <li>
+                            {/* <FormikSelect
+                              name="country"
+                              options={[]}
+                              value={values?.country}
+                              onChange={(valueOption) => {
+                                console.log(valueOption)
+                              }}
+                              placeholder=""
+                              styles={customStyles}
+                              errors={errors}
+                              touched={touched}
+                            /> */}
+                          </li>
+                          <li>
+                            <button className="btn-prevNext">
+                              <ChevronLeft sx={{ color: "#88898E" }} />
+                            </button>
+                          </li>
+                          <li>
+                            <button className="btn-prevNext">
+                              <ChevronRight sx={{ color: "#88898E" }} />
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
