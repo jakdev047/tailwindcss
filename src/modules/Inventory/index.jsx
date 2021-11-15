@@ -6,12 +6,11 @@ import {
   ArrowDownwardOutlined,
 } from "@mui/icons-material";
 import FilterSearch from "../../common/FilterSearch";
-import ScrollableTable from "../../common/ScrollableTable";
 import FormikCheckbox from "../../common/FormikCheckbox";
 import { grayColor } from "../../utility/color";
-import { todayDate } from "../../utility/todayDate";
 import { dateFormatter } from "../../utility/dateFormatter";
 import { inventoryData } from "../../utility/inventoryData";
+import LandingTable from "../../common/LandingTable";
 
 const initData = {
   searchInventory: "",
@@ -64,10 +63,10 @@ export default function Inventory() {
                       />
                     </div>
                     <div className="table-card-content">
-                      <ScrollableTable>
+                      <LandingTable>
                         <thead className="bg-warning h-h40">
                           <tr>
-                            <th style={{ padding: "0 0 0 5px", width: "64px" }}>
+                            <th className="w-w64" style={{paddingLeft: '5px'}}>
                               <FormikCheckbox
                                 styleObj={{
                                   padding: "0!important",
@@ -81,7 +80,7 @@ export default function Inventory() {
                                 }}
                               />
                             </th>
-                            <th style={{ width: "120px" }}>
+                            <th className="w-w120">
                               <div className="flex items-center">
                                 <span className="text-13 font-medium">
                                   Date Updated
@@ -91,7 +90,7 @@ export default function Inventory() {
                                 />
                               </div>
                             </th>
-                            <th style={{ width: "120px" }}>
+                            <th className="w-w120">
                               <div className="flex items-center">
                                 <span className="text-13 font-medium">
                                   Title
@@ -119,23 +118,24 @@ export default function Inventory() {
                                 Details
                               </div>
                             </th>
-                            <th style={{ width: "160px" }}>
+                            <th className="w-w160">
                               <div className="text-13 font-medium text-left">
                                 Status
                               </div>
                             </th>
-                            <th style={{ width: "100px" }}>
+                            <th className="w-w100">
                               <div className="text-13 font-medium text-left">
                                 Quantity
                               </div>
                             </th>
-                            <th style={{ width: "130px" }}>
+                            <th className="w-w130">
                               <span className="text-13 font-medium">
                                 Unit Price
                               </span>
                             </th>
                             <th
-                              style={{ padding: "0 11px 0 0", width: "130px" }}
+                              style={{ padding: "0 10px 0 0" }}
+                              className="w-w130"
                             >
                               <div className="text-right">
                                 <span className="text-13 font-medium flex items-center justify-end">
@@ -167,8 +167,8 @@ export default function Inventory() {
                               {inventoryData?.map((item, index) => {
                                 return (
                                   <>
-                                    <tr className="h-h64">
-                                      <td style={{ padding: "0 0 0 5px" }}>
+                                    <tr className="h-h64" key={index}>
+                                      <td style={{paddingLeft: '5px'}}>
                                         <div>
                                           <FormikCheckbox
                                             styleObj={{
@@ -189,7 +189,7 @@ export default function Inventory() {
                                       </td>
                                       <td>
                                         <div className="text-16">
-                                          {item?.dateUpdate}
+                                          {dateFormatter(item?.dateUpdate)}
                                         </div>
                                       </td>
                                       <td>
@@ -199,7 +199,7 @@ export default function Inventory() {
                                       </td>
                                       <td>
                                         <div className="text-16">
-                                          {item?.details}
+                                          {item?.details ? item?.details : '-'}
                                         </div>
                                       </td>
                                       <td>
@@ -213,6 +213,24 @@ export default function Inventory() {
                                               ></span>
                                             </>
                                           )}
+                                          {item?.status === "Out Of Stock" && (
+                                            <>
+                                              <span>Out Of Stock</span>
+                                              <span
+                                                className="circle-icon bg-error"
+                                                style={{ marginLeft: "8px" }}
+                                              ></span>
+                                            </>
+                                          )}
+                                          {item?.status === "In Progress" && (
+                                            <>
+                                              <span>In Progress</span>
+                                              <span
+                                                className="circle-icon bg-wraningBg"
+                                                style={{ marginLeft: "8px" }}
+                                              ></span>
+                                            </>
+                                          )}
                                         </div>
                                       </td>
                                       <td>
@@ -221,11 +239,11 @@ export default function Inventory() {
                                         </div>
                                       </td>
                                       <td>
-                                        <div className="text-center">{item?.price}</div>
+                                        <div className="text-center">${item?.price}</div>
                                       </td>
-                                      <td style={{ padding: "0 11px 0 0" }}>
+                                      <td style={{ padding: "0 10px 0 0" }}>
                                         <div className="text-right">
-                                          {item?.amount}
+                                          ${item?.amount}
                                         </div>
                                       </td>
                                     </tr>
@@ -235,9 +253,11 @@ export default function Inventory() {
                             </>
                           )}
                         </tbody>
-                      </ScrollableTable>
+                      </LandingTable>
                     </div>
-                    <div className="table-card-pagination"></div>
+                    <div className="table-card-pagination">
+                      
+                    </div>
                   </div>
                 </div>
               </div>

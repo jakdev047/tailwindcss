@@ -11,11 +11,15 @@
   margin: 24px;
 }
 .table-card-search {
-    padding: 0 0 24px 17px;
+  padding: 0 0 24px 17px;
 }
 .circle-icon {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.table-card-pagination {
+  margin: 24px 0 0;
 }

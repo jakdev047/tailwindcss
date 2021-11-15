@@ -10,7 +10,9 @@ module.exports = {
         bodyColor: "#f2f2f3",
         menuColor: "#6b6c72",
         placeholderColor: "#88898e",
-        warning: " #fdf4ed",
+        warning: "#fdf4ed",
+        wraningBg: "#F58A28",
+        error: "#F52828"
       },
       textColor: (theme) => theme("colors"),
       fontSize: {
@@ -49,11 +51,18 @@ module.exports = {
         extraBold: "800",
         black: "900",
       },
+      width:{
+        w64: "64px",
+        w100: "100px",
+        w120: "120px",
+        w130: "130px",
+        w160: "160px",
+      },
       height: {
         h72: "72px",
         h64: "64px",
         h40: "40px"
-      }
+      },
     },
     screens: {
       mobile: "400px",
