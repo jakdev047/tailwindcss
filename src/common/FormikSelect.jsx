@@ -19,13 +19,14 @@ const FormikSelect = (props) => {
     setClear,
     styleMode,
     isDisabled,
-    menuPosition
+    menuPosition,
+    classess,
   } = props;
 
   return (
     <div className='form-container'>
       <div
-        className='formik-select-wrapper'
+        className={classess ? `formik-select-wrapper ${classess}` : `formik-select-wrapper`}
         ref={target}
         onFocus={() => setIsFocusForm(true)}
         onBlur={() => setIsFocusForm(false)}

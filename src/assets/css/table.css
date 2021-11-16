@@ -47,3 +47,14 @@
   border-radius: 4px;
   outline: 0;
 }
+
+.formik-select-wrapper {
+  width: 160px;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.formik-select-wrapper.par-page-select {
+  width: 200px;
+}

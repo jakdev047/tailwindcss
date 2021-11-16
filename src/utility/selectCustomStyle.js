@@ -9,14 +9,14 @@ import {
 export const customStyles = {
   control: (provided, state) => ({
     ...provided,
-    minHeight: "40px",
-    height: "40px",
+    minHeight: "32px",
+    height: "32x",
     borderRadius: "4px",
   }),
 
   valueContainer: (provided, state) => ({
     ...provided,
-    height: "40px",
+    height: "32px",
     padding: "0 6px",
   }),
   valueOption: (provided, state) => ({
@@ -33,15 +33,14 @@ export const customStyles = {
   }),
   indicatorsContainer: (provided, state) => ({
     ...provided,
-    height: "40px",
+    height: "32px",
   }),
   option: (provided, { isDisabled, isFocused, isSelected }) => ({
     ...provided,
     fontWeight: 500,
-    fontSize: 14,
-    lineHeight: "24px",
-    letterSpacing: 0.1,
-    paddingLeft: 18,
+    fontSize: 13,
+    lineHeight: "20px",
+    letterSpacing: '0.02em',
     color: isDisabled ? lightGray : isSelected ? secondaryColor : primaryColor,
     backgroundColor: isDisabled
       ? lightGray

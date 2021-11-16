@@ -18,6 +18,8 @@ import { customStyles } from "../../utility/selectCustomStyle";
 
 const initData = {
   searchInventory: "",
+  pageNo: "",
+  perPage: "",
 };
 const validationSchema = Yup.object({});
 
@@ -269,23 +271,51 @@ export default function Inventory() {
                     </div>
                     <div className="table-card-pagination">
                       <div className="table-card-left">
-                        <div className="btn btn-pagination"></div>
-                      </div>
-                      <div className="table-card-right">
                         <ul>
                           <li>
-                            {/* <FormikSelect
-                              name="country"
-                              options={[]}
+                            <FormikSelect
+                              classess="par-page-select"
+                              name="perPage"
+                              options={[
+                                { value: 1, label: "5 Items per page" },
+                                { value: 2, label: "15 Items per page" },
+                                { value: 3, label: "30 Items per page" },
+                                { value: 4, label: "100 Items per page" },
+                                { value: 5, label: "500 Items per page" },
+                              ]}
                               value={values?.country}
                               onChange={(valueOption) => {
-                                console.log(valueOption)
+                                console.log(valueOption);
                               }}
                               placeholder=""
                               styles={customStyles}
                               errors={errors}
                               touched={touched}
-                            /> */}
+                            />
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="table-card-right">
+                        <ul>
+                          <li>
+                            <FormikSelect
+                              name="pageNo"
+                              options={[
+                                { value: 1, label: "page 1 of 5" },
+                                { value: 2, label: "page 2 of 5" },
+                                { value: 3, label: "page 3 of 5" },
+                                { value: 4, label: "page 4 of 5" },
+                                { value: 5, label: "page 5 of 5" },
+                              ]}
+                              value={values?.country}
+                              onChange={(valueOption) => {
+                                console.log(valueOption);
+                              }}
+                              placeholder=""
+                              styles={customStyles}
+                              errors={errors}
+                              touched={touched}
+                            />
                           </li>
                           <li>
                             <button className="btn-prevNext">
