@@ -12,7 +12,7 @@ module.exports = {
         placeholderColor: "#88898e",
         warning: "#fdf4ed",
         wraningBg: "#F58A28",
-        error: "#F52828"
+        error: "#F52828",
       },
       textColor: (theme) => theme("colors"),
       fontSize: {
@@ -51,7 +51,8 @@ module.exports = {
         extraBold: "800",
         black: "900",
       },
-      width:{
+      width: {
+        32: "32px",
         w64: "64px",
         w100: "100px",
         w120: "120px",
@@ -61,14 +62,24 @@ module.exports = {
       height: {
         h72: "72px",
         h64: "64px",
-        h40: "40px"
+        h40: "40px",
+        32: "32px",
+      },
+      borderRadius: {},
+      padding: {
+        
       },
     },
     screens: {
-      mobile: "400px",
-      tablet: "800px",
-      laptop: "1024px",
-      desktop: "1280px",
+      desktop: {'max': '1599px'},
+
+      laptop: {'max': '1199px'},
+
+      tablet: {'max': '991px'},
+
+      'sm': {'max': '776px'},
+
+      mobile: {'max': '400px'},
     },
   },
   variants: {

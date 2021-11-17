@@ -49,7 +49,8 @@ export default function TopNavigation() {
                   </div>
                 </div>
                 <div className="top-menu">
-                  <div>
+                  <div className="hidden sm:block"></div>
+                  <div className="top-menu-filter block sm:hidden">
                     <FilterSearch
                       value={values?.searchString}
                       setValue={(value) => {

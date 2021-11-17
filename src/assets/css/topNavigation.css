@@ -1,41 +1,33 @@
 .top-navigation-wrapper {
   padding: 0px 28px 0 36px;
-  height: 64px;
-  @apply sticky w-full top-0 bg-white;
+  @apply sticky w-full top-0 h-h64 bg-white;
 }
 
 .top-menu {
-  @apply flex items-center w-full;
-  justify-content: space-between;
-  padding-left: 43px;
+  @apply flex items-center justify-between w-full pl-0 tablet:pl-0 laptop:pl-11;
 }
 
 /* .top-navigation-left  */
 .top-navigation {
-  display: flex;
-  align-items: center;
+  @apply flex items-center;
 }
 .top-navigation-left {
   width: 205px;
-  height: 64px;
-  display: flex;
-  align-items: center;
+  @apply flex items-center h-h64;
 }
 .top-drop-menu span.txt {
-  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.25px;
-  color: #3e3f48;
   margin-right: 7px;
+  @apply text-primaryColor font-medium;
 }
 .top-drop-menu span.icon {
-  color: #88898e;
+  @apply text-placeholderColor;
 }
 .profile-menu-img {
-  display: inline-block;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
   margin: 0 16px 0 19px;
+  @apply inline-block rounded-full;
 }

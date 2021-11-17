@@ -2,6 +2,10 @@
 }
 
 @media screen and (max-width: 1199px) {
+    /* top navigation */
+    .top-navigation-left {
+        width: 125px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -14,6 +18,9 @@
 }
 
 @media screen and (max-width: 575px) {
+    .top-menu {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 445px) {
