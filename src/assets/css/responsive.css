@@ -15,12 +15,12 @@
 }
 
 @media screen and (max-width: 767px) {
+    .top-drop-menu span.txt {
+        margin-right: 0px;
+    }
 }
 
 @media screen and (max-width: 575px) {
-    .top-menu {
-        width: 70%;
-    }
 }
 
 @media screen and (max-width: 445px) {
