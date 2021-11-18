@@ -13,6 +13,7 @@ module.exports = {
         warning: "#fdf4ed",
         wraningBg: "#F58A28",
         error: "#F52828",
+        success: "#44c776",
       },
       textColor: (theme) => theme("colors"),
       fontSize: {
@@ -58,6 +59,7 @@ module.exports = {
         w120: "120px",
         w130: "130px",
         w160: "160px",
+        w235: "235px",
       },
       height: {
         h72: "72px",
@@ -66,21 +68,29 @@ module.exports = {
         32: "32px",
       },
       borderRadius: {},
-      padding: {
-        
+      zIndex: {
+        9999: 9999,
       },
+      padding: {},
     },
     screens: {
-      desktop: {'max': '1599px'},
+      desktop: { max: "1599px" },
 
-      laptop: {'max': '1199px'},
+      laptop: { max: "1199px" },
 
-      tablet: {'max': '991px'},
+      tablet: { max: "991px" },
 
-      'sm': {'max': '776px'},
+      sm: { max: "776px" },
 
-      mobile: {'max': '400px'},
+      mobile: { max: "400px" },
     },
+    backgroundColor: (theme) => ({
+      ...theme("colors"),
+      warning: "#fdf4ed",
+      wraningBg: "#F58A28",
+      error: "#F52828",
+      success: "#44c776",
+    }),
   },
   variants: {
     extend: {},

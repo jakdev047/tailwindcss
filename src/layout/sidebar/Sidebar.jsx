@@ -31,7 +31,8 @@ const Sidebar = () => {
                   className={makeActive(firstLevel?.to, true) ? "active" : ""}
                   to={firstLevel?.to}
                 >
-                    {firstLevel?.icon} {firstLevel?.label}
+                    {firstLevel?.icon}
+                    <span className="tablet:hidden block">{firstLevel?.label}</span>
                 </Link>
               </div>
             </li>

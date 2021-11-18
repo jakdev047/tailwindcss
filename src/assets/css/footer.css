@@ -1,7 +1,7 @@
 /* footer-div */
 .footer-div {
     height: 72px;
-    @apply block mobile:hidden absolute bg-white bottom-0 left-0 w-full;
+    @apply sm:block hidden bg-white;
 }
 
 .footer-div ul {

@@ -38,6 +38,9 @@
   background-color: #fff;
   color: var(--secondary-color);
 }
+.menu ul li a span{
+  margin-left: 13px;
+}
 
 .menu ul li a.active {
   color: var(--secondary-color);

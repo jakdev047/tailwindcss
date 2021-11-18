@@ -22,7 +22,7 @@ const BasePage = () => {
             </div>
 
             {/* sidebar section */}
-            <div className="sidebar width-15">
+            <div className="sidebar width-15 sm:hidden block">
                <Sidebar />
             </div>
 
