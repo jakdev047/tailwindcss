@@ -26,6 +26,9 @@
         align-items: center;
         justify-content: center;
     }
+    .vertical-scroll-table {
+        height: 445px;
+    }
 }
 
 @media screen and (max-width: 767px) {

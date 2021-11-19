@@ -68,12 +68,12 @@ export default function Inventory() {
                         handleClick={() => {}}
                       />
                     </div>
-                    <div className="table-card-content">
+                    <div className="table-card-content vertical-scroll-table">
                       <LandingTable>
                         <thead className="bg-warning h-h40">
                           <tr>
                             <th
-                              className="w-w64"
+                              className="w-w64 sm:hidden"
                               style={{ paddingLeft: "5px" }}
                             >
                               <FormikCheckbox
@@ -89,7 +89,7 @@ export default function Inventory() {
                                 }}
                               />
                             </th>
-                            <th className="w-w120 sm:hidden block">
+                            <th className="w-w120 sm:hidden">
                               <div className="flex items-center">
                                 <span className="text-13 font-medium">
                                   Date Updated
@@ -99,7 +99,7 @@ export default function Inventory() {
                                 />
                               </div>
                             </th>
-                            <th className="w-w120">
+                            <th className="w-w120 sm:p-4">
                               <div className="flex items-center">
                                 <span className="text-13 font-medium">
                                   Title
@@ -122,7 +122,7 @@ export default function Inventory() {
                                 </span>
                               </div>
                             </th>
-                            <th className="laptop:hidden block">
+                            <th className="laptop:hidden">
                               <div className="text-13 font-medium text-left">
                                 Details
                               </div>
@@ -137,7 +137,7 @@ export default function Inventory() {
                                 Quantity
                               </div>
                             </th>
-                            <th className="w-w130 laptop:hidden block">
+                            <th className="w-w130 laptop:hidden">
                               <span className="text-13 font-medium">
                                 Unit Price
                               </span>
@@ -177,7 +177,7 @@ export default function Inventory() {
                                 return (
                                   <>
                                     <tr className="h-h64" key={index}>
-                                      <td style={{ paddingLeft: "5px" }}>
+                                      <td style={{ paddingLeft: "5px" }} className="sm:hidden">
                                         <div>
                                           <FormikCheckbox
                                             styleObj={{
@@ -196,17 +196,17 @@ export default function Inventory() {
                                           />
                                         </div>
                                       </td>
-                                      <td className="sm:hidden block">
+                                      <td className="sm:hidden">
                                         <div className="text-16">
                                           {dateFormatter(item?.dateUpdate)}
                                         </div>
                                       </td>
-                                      <td>
+                                      <td className="sm:p-4">
                                         <div className="text-16">
                                           {item?.title}
                                         </div>
                                       </td>
-                                      <td className="laptop:hidden block">
+                                      <td className="laptop:hidden">
                                         <div className="text-16">
                                           {item?.details ? item?.details : "-"}
                                         </div>
@@ -215,7 +215,7 @@ export default function Inventory() {
                                         <div className="text-16">
                                           {item?.status === "Al Right" && (
                                             <>
-                                              <span className="sm:hidden block">Alright</span>
+                                              <span className="sm:hidden">Alright</span>
                                               <span
                                                 className="circle-icon bg-success"
                                                 style={{ marginLeft: "8px" }}
@@ -224,7 +224,7 @@ export default function Inventory() {
                                           )}
                                           {item?.status === "Out Of Stock" && (
                                             <>
-                                              <span className="sm:hidden block">Out Of Stock</span>
+                                              <span className="sm:hidden">Out Of Stock</span>
                                               <span
                                                 className="circle-icon bg-error"
                                                 style={{ marginLeft: "8px" }}
@@ -233,7 +233,7 @@ export default function Inventory() {
                                           )}
                                           {item?.status === "In Progress" && (
                                             <>
-                                              <span className="sm:hidden block">In Progress</span>
+                                              <span className="sm:hidden">In Progress</span>
                                               <span
                                                 className="circle-icon bg-wraningBg"
                                                 style={{ marginLeft: "8px" }}
@@ -250,7 +250,7 @@ export default function Inventory() {
                                           /{item?.quantityTotal}
                                         </div>
                                       </td>
-                                      <td className="laptop:hidden block">
+                                      <td className="laptop:hidden">
                                         <div className="text-center">
                                           ${item?.price}
                                         </div>

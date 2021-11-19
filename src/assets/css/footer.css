@@ -1,4 +1,9 @@
 /* footer-div */
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 .footer-div {
     height: 72px;
     @apply sm:block hidden bg-white;

@@ -9,12 +9,14 @@ import Sidebar from "../layout/sidebar/Sidebar";
 
 // module
 const Dashboard = lazy(() => import("../modules/dashboard/index"));
-const Inventory = lazy(() => import("../modules/Inventory/index"));
+const Inventory = lazy(() => import("../modules/inventory/index"));
+const Documents = lazy(() => import("../modules/documents/index"));
+const Settings = lazy(() => import("../modules/settings/index"));
 
 const BasePage = () => {
 
    return (
-      <div className="main mobile:relative h-screen mobile:auto tablet:h-auto desktop:h-auto">
+      <div className="main mobile:relative h-screen overflow-hidden">
          <BrowserRouter>
             {/* topNavigation */}
             <div className="top-navigation-wrapper">
@@ -34,8 +36,8 @@ const BasePage = () => {
                      <Switch>
                         <Route exact path="/" component={Dashboard} />
                         <Route exact path="/inventory" component={Inventory} />
-                        <Route exact path="/documents" component={() => <h2>Documents</h2>} />
-                        <Route exact path="/settings" component={() => <h2>Settings</h2>} />
+                        <Route exact path="/documents" component={Documents} />
+                        <Route exact path="/settings" component={Settings} />
                         <Route path="/error" component={() => <h1>Error 404!</h1>} />
                         <Redirect to="/error" />
                      </Switch>

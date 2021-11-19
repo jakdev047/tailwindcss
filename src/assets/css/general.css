@@ -176,11 +176,11 @@ button {
   transition: 0.3s linear;
 }
 .app .main .body {
- @apply w-full h-full;
+ @apply w-full;
 }
 .app .main .body .body-inner {
-  padding: 0px 0px 115px;
-  @apply w-full h-full;
+  padding: 0px 0px 0px;
+  @apply w-full;
   border-left: 1px solid #e5e5e6;
 }
 .main ul li {

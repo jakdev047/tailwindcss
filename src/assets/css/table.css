@@ -58,3 +58,9 @@
 .formik-select-wrapper.par-page-select {
   width: 200px;
 }
+
+/* scroll-table */
+.vertical-scroll-table {
+  height: 550px;
+  overflow-y: scroll;
+}
