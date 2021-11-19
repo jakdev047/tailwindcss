@@ -2,3 +2,16 @@
 .title {
   @apply text-primaryColor font-bold text-20;
 }
+
+/* default-search */
+.default-search {
+  border: 1px solid #e5e5e6;
+  width: 392px;
+  border-radius: 8px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background: #f2f2f3;
+  padding: 0 10px 0 0;
+}

@@ -80,7 +80,7 @@ module.exports = {
 
       tablet: { max: "991px" },
 
-      sm: { max: "776px" },
+      sm: { max: "768px" },
 
       mobile: { max: "400px" },
     },

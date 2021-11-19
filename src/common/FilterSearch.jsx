@@ -10,21 +10,12 @@ export default function FilterSearch({
   cancelHandler,
   width,
   crossClassName,
+  classes,
 }) {
   return (
     <div
-      style={{
-        border: "1px solid #E5E5E6",
-        width: width || "392px",
-        borderRadius: "8px",
-        marginRight: "10px",
-        display: "flex",
-        alignItems: "center",
-        height: "40px",
-        background: "#F2F2F3",
-        padding: "0 10px 0 0",
-      }}
       component="form"
+      className={classes ? `default-search ${classes}` : `default-search`}
     >
       <IconButton
         type="button"
