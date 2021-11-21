@@ -16,6 +16,9 @@ module.exports = {
         success: "#44c776",
       },
       textColor: (theme) => theme("colors"),
+      fontFamily: {
+        roboto: "Roboto, sans-serif",
+      },
       fontSize: {
         // [fontSize, { letterSpacing, lineHeight }]
         13: [
@@ -39,6 +42,7 @@ module.exports = {
             lineHeight: "24px",
           },
         ],
+        18: "18px",
         20: ["20px", "32px"],
       },
       fontWeight: {
@@ -51,6 +55,12 @@ module.exports = {
         bold: "700",
         extraBold: "800",
         black: "900",
+      },
+      letterSpacing: {
+        ls02: "0.02em",
+      },
+      lineHeight: {
+        28: "28px",
       },
       width: {
         32: "32px",
