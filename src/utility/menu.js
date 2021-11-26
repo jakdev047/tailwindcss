@@ -2,7 +2,8 @@ import {
   OtherHousesOutlined,
   DescriptionOutlined,
   EventNoteOutlined,
-  SettingsOutlined
+  SettingsOutlined,
+  AccountTreeOutlined
 } from '@mui/icons-material';
 
 
@@ -36,6 +37,14 @@ export const menuList = [
     label: "Settings",
     to: "/settings",
     icon: <SettingsOutlined />,
+    isFirstLabel: false,
+    subs: [],
+  },
+  {
+    id: 5,
+    label: "Typescript",
+    to: "/typescript",
+    icon: <AccountTreeOutlined />,
     isFirstLabel: false,
     subs: [],
   },

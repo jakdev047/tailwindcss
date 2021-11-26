@@ -12,6 +12,7 @@ const Dashboard = lazy(() => import("../modules/dashboard/index"));
 const Inventory = lazy(() => import("../modules/inventory/index"));
 const Documents = lazy(() => import("../modules/documents/index"));
 const Settings = lazy(() => import("../modules/settings/index"));
+const TypeScriptModule = lazy(() => import("../modules/TypeScriptModule/index.tsx"));
 
 const BasePage = () => {
 
@@ -38,6 +39,7 @@ const BasePage = () => {
                         <Route exact path="/inventory" component={Inventory} />
                         <Route exact path="/documents" component={Documents} />
                         <Route exact path="/settings" component={Settings} />
+                        <Route exact path="/typescript" component={TypeScriptModule} />
                         <Route path="/error" component={() => <h1>Error 404!</h1>} />
                         <Redirect to="/error" />
                      </Switch>
