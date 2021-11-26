@@ -9,7 +9,9 @@ export default function Settings() {
         </div>
         <div className="table-card-body">
           <div className="table-card-content vertical-scroll-table">
-              <h2 className="text-18 font-roboto font-bold tracking-ls02 leading-28">Font Property</h2>
+              <div className="container bg-success px-4">
+                <h2 className="text-18 font-roboto font-bold tracking-ls02 leading-28 text-white">Font Property</h2>
+              </div>
           </div>
           <div className="table-card-pagination"></div>
         </div>

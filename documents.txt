@@ -1,0 +1,16 @@
+# Text 
+================================================================
+    Alignment: text-left text-center text-right text-justify
+    Color: text-white
+    Opacity: text-opacity-0 to text-opacity-100
+    Decoration: underline line-through no-underline
+    Transform: uppercase lowercase capitalize normal-case
+    Overflow: truncate overflow-ellipsis overflow-clip
+    Vertical Alignment: align-baseline align-top align-middle align-bottom align-text-top align-text-bottom
+    Whitespace: whitespace-normal whitespace-nowrap whitespace-pre whitespace-pre-warp
+    Word Break: break-normal break-words break-all 
+
+
+# Hover 
+================================================================
+    hover:text-red-500
