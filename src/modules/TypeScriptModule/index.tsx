@@ -1,7 +1,27 @@
 import React from "react";
 import { Greet } from "./components/Greet";
+import Person from "./components/Person";
+import PersonList from "./components/PersonList";
 
 export default function TypeScriptModule() {
+  const parsonName = {
+    first: 'Jubayer',
+    last: 'Khan'
+  };
+  const parsons = [
+    {
+      first: 'Jubayer',
+      last: 'Khan'
+    },
+    {
+      first: 'Alam',
+      last: 'Khan'
+    },
+    {
+      first: 'Jubayer',
+      last: 'Khan'
+    }
+  ];
   return (
     <>
       <div className="table-card">
@@ -10,8 +30,10 @@ export default function TypeScriptModule() {
         </div>
         <div className="table-card-body">
           <div className="table-card-content vertical-scroll-table">
-              <div className="container bg-success px-4">
-                <Greet name="String" />
+              <div className="container">
+                <Greet name="Font Size" fontSize={18} isLoggedIn={false} />
+                <Person name={parsonName} />
+                <PersonList parsons={parsons}/>
               </div>
           </div>
           <div className="table-card-pagination"></div>
