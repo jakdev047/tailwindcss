@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import Select from "react-select";
 import { customStyles } from "../utility/selectCustomStyle";
 import FormikError from "./FormikError";

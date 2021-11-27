@@ -1,11 +1,14 @@
-import React from "react";
+import { useState } from "react";
+import Button from "./components/Button";
 import { Greet } from "./components/Greet";
 import { Heading } from "./components/Heading";
+import Input from "./components/Input";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
 import TableCardHeading from "./components/TableCardHead";
 
 export default function TypeScriptModule() {
+  const [name,setName] = useState("");
   const parsonName = {
     first: "Jubayer",
     last: "Khan",
@@ -24,6 +27,8 @@ export default function TypeScriptModule() {
       last: "Khan",
     },
   ];
+
+  console.log("name",name);
   return (
     <>
       <div className="table-card">
@@ -37,6 +42,22 @@ export default function TypeScriptModule() {
               <Greet name="Font Size" isLoggedIn={true} />
               <Person name={parsonName} />
               <PersonList parsons={parsons} />
+              <div>
+                <Input 
+                  type="text"
+                  value={name}
+                  placeholder="Your Name..."
+                  handleChange={e=>{
+                    setName(e.target.value);
+                  }}
+                />
+                <Button 
+                  handleClick={(e,id)=>{
+                    console.log("Button Clicked",e,id);
+                  }}
+                  title={"Click"}
+                />
+              </div>
             </div>
           </div>
           <div className="table-card-pagination"></div>

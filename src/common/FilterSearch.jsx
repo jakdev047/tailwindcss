@@ -1,4 +1,3 @@
-import React from "react";
 import { Clear, Search } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";

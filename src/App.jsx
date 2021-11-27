@@ -1,5 +1,3 @@
-import React from 'react';
-
 // routing page
 import BasePage from './router/basePage.jsx';
 
