@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./components/Button";
+import { Container } from "./components/Container";
 import { Greet } from "./components/Greet";
 import { Heading } from "./components/Heading";
 import Input from "./components/Input";
@@ -58,6 +59,9 @@ export default function TypeScriptModule() {
                   title={"Click"}
                 />
               </div>
+              <Container 
+                styles={{border: "1px solid black", padding: "1rem"}}
+              />
             </div>
           </div>
           <div className="table-card-pagination"></div>
