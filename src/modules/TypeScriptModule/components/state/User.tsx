@@ -7,6 +7,7 @@ type AuthUser = {
 
 export default function User() {
   const [isLoggedIn, setIsLoggedIn] = useState<AuthUser | null>(null);
+//   const [isLoggedIn, setIsLoggedIn] = useState<AuthUser>({} as AuthUser);
 
   const handleLoggedIn = () => {
     setIsLoggedIn({
