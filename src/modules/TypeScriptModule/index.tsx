@@ -7,6 +7,7 @@ import Input from "./components/Input";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
 import LogedIn from "./components/state/LogedIn";
+import User from "./components/state/User";
 import TableCardHeading from "./components/TableCardHead";
 
 export default function TypeScriptModule() {
@@ -64,6 +65,7 @@ export default function TypeScriptModule() {
                 styles={{border: "1px solid black", padding: "1rem"}}
               />
               <LogedIn />
+              <User />
             </div>
           </div>
           <div className="table-card-pagination"></div>
