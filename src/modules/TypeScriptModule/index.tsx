@@ -6,6 +6,7 @@ import { Heading } from "./components/Heading";
 import Input from "./components/Input";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
+import LogedIn from "./components/state/LogedIn";
 import TableCardHeading from "./components/TableCardHead";
 
 export default function TypeScriptModule() {
@@ -62,6 +63,7 @@ export default function TypeScriptModule() {
               <Container 
                 styles={{border: "1px solid black", padding: "1rem"}}
               />
+              <LogedIn />
             </div>
           </div>
           <div className="table-card-pagination"></div>
