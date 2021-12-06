@@ -6,6 +6,7 @@ import { Heading } from "./components/Heading";
 import Input from "./components/Input";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
+import { Counter } from "./components/state/Counter";
 import LogedIn from "./components/state/LogedIn";
 import User from "./components/state/User";
 import TableCardHeading from "./components/TableCardHead";
@@ -66,6 +67,7 @@ export default function TypeScriptModule() {
               />
               <LogedIn />
               <User />
+              <Counter />
             </div>
           </div>
           <div className="table-card-pagination"></div>

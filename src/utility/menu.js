@@ -3,7 +3,8 @@ import {
   DescriptionOutlined,
   EventNoteOutlined,
   SettingsOutlined,
-  AccountTreeOutlined
+  AccountTreeOutlined,
+  GestureOutlined
 } from '@mui/icons-material';
 
 
@@ -45,6 +46,14 @@ export const menuList = [
     label: "Typescript",
     to: "/typescript",
     icon: <AccountTreeOutlined />,
+    isFirstLabel: false,
+    subs: [],
+  },
+  {
+    id: 6,
+    label: "SVG",
+    to: "/svg",
+    icon: <GestureOutlined />,
     isFirstLabel: false,
     subs: [],
   },
