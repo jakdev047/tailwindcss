@@ -14,6 +14,8 @@ module.exports = {
         wraningBg: "#F58A28",
         error: "#F52828",
         success: "#44c776",
+        bdGreen: "#006a4e",
+        bdRed: "#f42a41"
       },
       textColor: (theme) => theme("colors"),
       fontFamily: {

@@ -1,0 +1,36 @@
+Circle
+================================================================
+    <circle
+        cx="90"
+        cy="60"
+        r="40"
+        fill="#f42a41"
+    />
+
+    The radius of the circle = r =>  <length> 
+    The x-axis coordinate of the center of the circle = cx =>  <length>|<percentage> 
+    The y-axis coordinate of the center of the circle = cy =>  <length>|<percentage> 
+    The outline of the given graphical element = stroke => <string>
+    The distance between the two edges of a stroke = stroke-width => <length>
+    To fill the current drawing path  = fill => <string>
+
+
+Arch
+================================================================
+    import {arc} from 'd3';
+
+    const mouthArc = arc()
+            .innerRadius(0)
+            .outerRadius(100)
+            .startAngle(0)
+            .endAngle(Math.PI * 2);
+
+    <path d={mouthArc()} />
+
+    inner radius of circle = innerRadius(0)
+
+SVG group tag
+================================================================
+    <g transform={`translate(${150},${150})`}>
+        //code
+    </g>
