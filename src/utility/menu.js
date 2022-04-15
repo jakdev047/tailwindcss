@@ -4,7 +4,9 @@ import {
   EventNoteOutlined,
   SettingsOutlined,
   AccountTreeOutlined,
-  GestureOutlined
+  GestureOutlined,
+  ArticleOutlined
+  // ViewKanbanOutlined
 } from '@mui/icons-material';
 
 
@@ -54,6 +56,14 @@ export const menuList = [
     label: "SVG",
     to: "/svg",
     icon: <GestureOutlined />,
+    isFirstLabel: false,
+    subs: [],
+  },
+  {
+    id: 7,
+    label: "Kanban Board",
+    to: "/kanban-board",
+    icon: <ArticleOutlined />,
     isFirstLabel: false,
     subs: [],
   },

@@ -6,7 +6,6 @@ import TopNavigation from './../layout/topNavigation/TopNavigation';
 import FooterSection from "../layout/footer/FooterSection";
 import Sidebar from "../layout/sidebar/Sidebar";
 
-
 // module
 const Dashboard = lazy(() => import("../modules/dashboard/index"));
 const Inventory = lazy(() => import("../modules/inventory/index"));
@@ -14,6 +13,7 @@ const Documents = lazy(() => import("../modules/documents/index"));
 const Settings = lazy(() => import("../modules/settings/index"));
 const TypeScriptModule = lazy(() => import("../modules/TypeScriptModule/index.tsx"));
 const SVG = lazy(() => import("../modules/svg"));
+const KanbanBoard = lazy(() => import("../modules/kanbanBoard"));
 
 const BasePage = () => {
 
@@ -42,6 +42,7 @@ const BasePage = () => {
                         <Route exact path="/settings" component={Settings} />
                         <Route exact path="/typescript" component={TypeScriptModule} />
                         <Route exact path="/svg" component={SVG} />
+                        <Route exact path="/kanban-board" component={KanbanBoard} />
                         <Route path="/error" component={() => <h1>Error 404!</h1>} />
                         <Redirect to="/error" />
                      </Switch>

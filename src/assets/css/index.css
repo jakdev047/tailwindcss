@@ -10,6 +10,7 @@
 @import "./footer.css";
 @import "./table.css";
 @import "./scrollableTable.css";
+@import "./kanbanBoard.css";
 
 /* all module should be placed top of this */
 @import "./responsive.css";

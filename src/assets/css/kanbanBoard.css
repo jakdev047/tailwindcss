@@ -1,0 +1,11 @@
+.kanban-board-wrapper {
+  padding: 0 15px;
+}
+
+.add-task-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
