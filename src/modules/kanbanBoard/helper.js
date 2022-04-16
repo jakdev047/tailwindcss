@@ -22,13 +22,7 @@ export const taskListAddHandler = (
 };
 
 // task rename
-export const listDataHandler = (
-  taskList,
-  setTaskList,
-  name,
-  value,
-  index
-) => {
+export const listDataHandler = (taskList, setTaskList, name, value, index) => {
   const copy = [...taskList];
   copy[index][name] = value;
   setTaskList(copy);
@@ -43,9 +37,7 @@ export const taskListRemoveHandler = (
 ) => {
   let copy = [...taskList];
   if (nestedIndex !== null) {
-    copy[index].list = copy[index].list?.filter(
-      (_, i) => i !== +nestedIndex
-    );
+    copy[index].list = copy[index].list?.filter((_, i) => i !== +nestedIndex);
   } else {
     copy = copy?.filter((_, i) => i !== +index);
   }
@@ -53,12 +45,7 @@ export const taskListRemoveHandler = (
 };
 
 // to add card
-export const cardListAddHandler = (
-  taskList,
-  setTaskList,
-  index,
-  cb
-) => {
+export const cardListAddHandler = (taskList, setTaskList, index, cb) => {
   const copy = [...taskList];
   copy[index].list.push({
     id: `${index}-${copy[index].list?.length}`,
@@ -71,4 +58,18 @@ export const cardListAddHandler = (
   setTaskList(copy);
 
   cb && cb();
+};
+
+// card title rename
+export const cardDataHandler = (
+  taskList,
+  setTaskList,
+  name,
+  value,
+  index,
+  nestedIndex
+) => {
+  const copy = [...taskList];
+  copy[index].list[nestedIndex][name] = value;
+  setTaskList(copy);
 };

@@ -2,12 +2,15 @@ import { useState } from "react";
 import { stringValidation } from "../../utility/validation";
 import ChildTaskInput from "./component/ChildTaskInput";
 import ListInput from "./component/ListInput";
+import SingleTaskCard from "./component/SingleTaskCard";
 import TaskTitle from "./component/TaskTitle";
 
 export default function KanbanBoard() {
   const [isTaskInput, setIsTaskInput] = useState(false);
   const [taskName, setTaskName] = useState("");
   const [taskList, setTaskList] = useState([]);
+
+  const [selectedCard, setSelectedCard] = useState(null);
 
   console.log("taskList", taskList);
 
@@ -58,6 +61,18 @@ export default function KanbanBoard() {
                       item={item}
                       index={index}
                     />
+
+                    {/* All task card list */}
+                    {item?.list?.length > 0 ? (
+                      <SingleTaskCard
+                        item={item}
+                        index={index}
+                        taskList={taskList}
+                        setTaskList={setTaskList}
+                        selectedCard={selectedCard}
+                        setSelectedCard={setSelectedCard}
+                      />
+                    ) : null}
 
                     {/* task card new input */}
                     <ChildTaskInput
