@@ -4,6 +4,7 @@ import ChildTaskInput from "./component/ChildTaskInput";
 import ListInput from "./component/ListInput";
 import SingleTaskCard from "./component/SingleTaskCard";
 import TaskTitle from "./component/TaskTitle";
+import { listAndCardDrop, listDragEnd, listDragLeave, listDragOver, listDragStart } from "./dragDropController";
 
 export default function KanbanBoard() {
   const [isTaskInput, setIsTaskInput] = useState(false);
@@ -11,6 +12,7 @@ export default function KanbanBoard() {
   const [taskList, setTaskList] = useState([]);
 
   const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedList, setSelectedList] = useState(null);
 
   console.log("taskList", taskList);
 
@@ -30,28 +32,30 @@ export default function KanbanBoard() {
                     key={index}
                     data-index={index}
                     data-item={item}
-                    // onDragOver={(e) => listDragOver(e, selectedCard)}
-                    // onDrop={(e) =>
-                    //   listAndCardDrop(
-                    //     e,
-                    //     selectedList,
-                    //     selectedCard,
-                    //     dataset,
-                    //     setDataset,
-                    //     setSelectedList,
-                    //     setSelectedCard
-                    //   )
-                    // }
-                    // draggable={item?.draggable}
-                    // onDragStart={(e: any) => {
-                    //   listDragStart(e, item, index, setSelectedList);
-                    // }}
-                    // onDragEnd={(e: any) => {
-                    //   listDragEnd(e, item);
-                    // }}
-                    // onDragLeave={(e: any) => {
-                    //   listDragLeave(e, item);
-                    // }}
+                    draggable={item?.draggable}
+                    onDragStart={(e) => {
+                      e.stopPropagation();
+                      listDragStart(e, item, index, setSelectedList);
+                    }}
+                    onDragEnd={(e) => {
+                      e.stopPropagation();
+                      listDragEnd(e, item);
+                    }}
+                    onDrop={(e) =>
+                      listAndCardDrop(
+                        e,
+                        selectedList,
+                        selectedCard,
+                        taskList,
+                        setTaskList,
+                        setSelectedList,
+                        setSelectedCard
+                      )
+                    }
+                    onDragOver={(e) => listDragOver(e, selectedCard)}
+                    onDragLeave={(e) => {
+                      listDragLeave(e, item);
+                    }}
                     className="px-2 w-[300px] z-10"
                   >
                     {/* task list title */}

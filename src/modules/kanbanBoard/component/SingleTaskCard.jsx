@@ -5,6 +5,7 @@ import {
   DeleteOutlined,
 } from "@mui/icons-material";
 import { spaceValidation, stringValidation } from "../../../utility/validation";
+import { singleCardDragEnd, singleCardDragLeave, singleCardDragOver, singleCardDragStart, singleCardDrop } from "../dragDropController";
 import { cardDataHandler, taskListRemoveHandler } from "../helper";
 
 export default function SingleTaskCard({
@@ -129,6 +130,26 @@ export default function SingleTaskCard({
                       alert("Please unlocked the card first 🔓🔓");
                     }
                   }}
+                  // data attribute
+                  data-index={index}
+                  data-nestedindex={nestedIndex}
+                  draggable={nestedItem?.draggable}
+                  onDragStart={(e) => {
+                    e.stopPropagation();
+                    singleCardDragStart(e, taskList, setSelectedCard)
+                  }}
+                  onDragEnd={singleCardDragEnd}
+                  onDrop={(e) =>
+                    singleCardDrop(
+                      e,
+                      setSelectedCard,
+                      taskList,
+                      setSelectedCard,
+                      selectedCard
+                    )
+                  }
+                  onDragOver={(e) => singleCardDragOver(e, selectedCard)}
+                  onDragLeave={singleCardDragLeave}
                 >
                   {nestedItem?.name}
                 </span>
