@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { stringValidation } from "../../utility/validation";
+import ChildTaskInput from "./component/ChildTaskInput";
 import ListInput from "./component/ListInput";
 import TaskTitle from "./component/TaskTitle";
 
@@ -18,20 +20,52 @@ export default function KanbanBoard() {
         <div className="table-card-body transparent">
           <div className="kanban-board-wrapper">
             <div className="z-20 flex flex-row">
-
               {/* task list card */}
               {taskList.length > 0 &&
                 taskList?.map((item, index) => (
                   <div
                     key={index}
-                    className="px-2 w-[300px] overflow-y-auto z-10"
+                    data-index={index}
+                    data-item={item}
+                    // onDragOver={(e) => listDragOver(e, selectedCard)}
+                    // onDrop={(e) =>
+                    //   listAndCardDrop(
+                    //     e,
+                    //     selectedList,
+                    //     selectedCard,
+                    //     dataset,
+                    //     setDataset,
+                    //     setSelectedList,
+                    //     setSelectedCard
+                    //   )
+                    // }
+                    // draggable={item?.draggable}
+                    // onDragStart={(e: any) => {
+                    //   listDragStart(e, item, index, setSelectedList);
+                    // }}
+                    // onDragEnd={(e: any) => {
+                    //   listDragEnd(e, item);
+                    // }}
+                    // onDragLeave={(e: any) => {
+                    //   listDragLeave(e, item);
+                    // }}
+                    className="px-2 w-[300px] z-10"
                   >
                     {/* task list title */}
                     <TaskTitle
                       taskList={taskList}
                       setTaskList={setTaskList}
                       item={item}
-                      index={index} 
+                      index={index}
+                    />
+
+                    {/* task card new input */}
+                    <ChildTaskInput
+                      index={index}
+                      item={item}
+                      stringValidation={stringValidation}
+                      taskList={taskList}
+                      setTaskList={setTaskList}
                     />
                   </div>
                 ))}

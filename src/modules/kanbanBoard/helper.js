@@ -51,3 +51,24 @@ export const taskListRemoveHandler = (
   }
   setTaskList(copy);
 };
+
+// to add card
+export const cardListAddHandler = (
+  taskList,
+  setTaskList,
+  index,
+  cb
+) => {
+  const copy = [...taskList];
+  copy[index].list.push({
+    id: `${index}-${copy[index].list?.length}`,
+    name: `${copy[index]["newCardInput"]}`,
+    draggable: true,
+    isEditable: false,
+  });
+  copy[index]["newCardInput"] = "";
+
+  setTaskList(copy);
+
+  cb && cb();
+};

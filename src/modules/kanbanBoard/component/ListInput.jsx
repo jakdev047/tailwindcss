@@ -16,7 +16,7 @@ export default function ListInput({
   setTaskList,
 }) {
   return (
-    <div className="px-2 w-[300px] overflow-y-auto">
+    <div className="px-2 w-[300px]">
       {isTaskInput ? (
         <>
           <div className="table-card-body m-0 p-0">
