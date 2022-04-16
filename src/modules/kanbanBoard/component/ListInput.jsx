@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AddOutlined,
   AssignmentOutlined,
@@ -71,6 +70,7 @@ export default function ListInput({
                 sx={{ fontSize: "16px" }}
                 onClick={() => {
                   setIsTaskInput(false);
+                  setTaskName("");
                 }}
               />
             </div>
